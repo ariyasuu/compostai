@@ -1,0 +1,65 @@
+body {
+  font-family: "Inter", sans-serif;
+}
+.tab-button.active {
+  border-color: #22c55e;
+  background-color: #22c55e;
+  color: white;
+}
+.unit-button.active {
+  border-color: #22c55e;
+  background-color: #22c55e;
+  color: white;
+}
+.progress-bar-fill {
+  transition: width 0.5s ease-in-out;
+}
+details > summary {
+  cursor: pointer;
+}
+.search-results {
+  max-height: 200px;
+  overflow-y: auto;
+  z-index: 10;
+}
+.cn-thermometer-bar {
+  background: linear-gradient(to right, #ef4444, #f97316, #facc15, #84cc16, #22c55e, #84cc16, #facc15, #f97316, #ef4444);
+}
+.ph-thermometer-bar {
+  background: linear-gradient(to right, #f97316, #facc15, #84cc16, #22c55e, #84cc16, #4f46e5, #7c3aed);
+}
+.thermometer-pointer {
+  transition: left 0.5s ease-in-out;
+}
+@media print {
+  body * {
+    visibility: hidden;
+  }
+  .print-section,
+  .print-section * {
+    visibility: visible;
+  }
+  .print-section {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+  }
+  h1,
+  h2,
+  h3,
+  p,
+  li,
+  dt,
+  dd {
+    color: #000 !important;
+  }
+  .bg-green-100 {
+    background-color: #f0fdf4 !important;
+    border: 1px solid #ddd;
+  }
+  .bg-green-700 {
+    background-color: #f0fdf4 !important;
+    border: 1px solid #ddd;
+  }
+}
