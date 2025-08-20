@@ -54,17 +54,18 @@
             Calculadora de Composto
           </button>
           <button
-            onclick="changeTab('ph-calculator')"
-            id="tab-ph-calculator"
-            class="tab-button text-sm font-medium py-3 px-4 rounded-t-lg border-b-2 border-transparent hover:border-gray-300 hover:text-gray-600">
-            Calculadora de pH
-          </button>
-          <button
             onclick="changeTab('database')"
             id="tab-database"
             class="tab-button text-sm font-medium py-3 px-4 rounded-t-lg border-b-2 border-transparent hover:border-gray-300 hover:text-gray-600">
             Glossário de Materiais
           </button>
+          <button
+            onclick="changeTab('ph-calculator')"
+            id="tab-ph-calculator"
+            class="tab-button text-sm font-medium py-3 px-4 rounded-t-lg border-b-2 border-transparent hover:border-gray-300 hover:text-gray-600">
+            Calculadora de pH
+          </button>
+
           <button
             onclick="changeTab('maintenance-calculator')"
             id="tab-maintenance-calculator"
@@ -216,6 +217,63 @@
               </div>
             </div>
           </div>
+          <div class="mt-4 text-left max-w-3xl mx-auto space-y-2 print-section">
+            <details class="bg-gray-100 p-3 rounded-lg">
+              <summary class="font-semibold text-gray-700">O que são Materiais Verdes, Marrons e Neutros?</summary>
+              <div class="mt-2 text-sm text-gray-600 space-y-2">
+                <p>
+                  <strong>- Materiais Verdes (Ricos em Nitrogênio):</strong> Pense neles como os "ativadores" da sua composteira. São geralmente úmidos e
+                  frescos, como restos de frutas, verduras e borra de café. Eles fornecem a proteína que os microrganismos precisam para se multiplicar e
+                  aquecer a pilha.
+                </p>
+                <p>
+                  <strong>- Materiais Marrons (Ricos em Carbono):</strong> São a "estrutura" e a fonte de energia. Geralmente secos e fibrosos, como folhas
+                  secas, serragem e papelão. Eles garantem a aeração, evitam o mau cheiro e fornecem o "combustível" de longo prazo para os microrganismos.
+                </p>
+                <p>
+                  <strong>- Materiais Neutros (Funções Específicas):</strong> São os "corretivos" ou "melhoradores". Não entram na conta principal de Carbono e
+                  Nitrogênio, mas têm papéis importantes: a casca de ovo adiciona cálcio, a terra de jardim inocula microrganismos e o pó de rocha adiciona
+                  minerais.
+                </p>
+              </div>
+            </details>
+            <details class="bg-gray-100 p-3 rounded-lg">
+              <summary class="font-semibold text-gray-700">O que é a Relação Carbono/Nitrogênio (C:N)?</summary>
+              <div class="mt-2 text-sm text-gray-600">
+                <p>
+                  Imagine que os microrganismos da sua composteira precisam de uma dieta balanceada. O <strong>Carbono (C)</strong>, dos materiais "marrons"
+                  (folhas secas, papelão), é a fonte de energia. O <strong>Nitrogênio (N)</strong>, dos materiais "verdes" (restos de cozinha, grama), é a
+                  proteína para eles crescerem.
+                </p>
+                <p class="mt-1">A relação C:N ideal (entre 25:1 e 30:1) garante uma decomposição rápida, quente e sem mau cheiro.</p>
+              </div>
+            </details>
+            <details class="bg-red-100 p-3 rounded-lg">
+              <summary class="font-semibold text-red-800">Cuidados Essenciais: O que EVITAR na Compostagem</summary>
+              <div class="mt-2 text-sm text-red-700 space-y-2">
+                <p>
+                  <strong>- Restos de Origem Animal:</strong> Carnes, ossos, peixes e laticínios. Eles apodrecem, geram odores muito fortes, atraem pragas
+                  (ratos, moscas) e podem conter patógenos perigosos.
+                </p>
+                <p>
+                  <strong>- Gorduras e Óleos:</strong> Óleo de cozinha, azeite, manteiga e qualquer tipo de gordura. Eles impermeabilizam os materiais,
+                  bloqueando a passagem de ar e água, o que causa um ambiente anaeróbico (sem oxigênio) e mau cheiro.
+                </p>
+                <p>
+                  <strong>- Fezes de Animais Domésticos:</strong> Cocô de cães e gatos. Podem conter parasitas e vermes que são prejudiciais à saúde humana e
+                  que podem não ser eliminados durante a compostagem caseira.
+                </p>
+                <p>
+                  <strong>- Plantas Problemáticas:</strong> Plantas doentes, com pragas ou tratadas com agrotóxicos. Você corre o risco de espalhar as doenças e
+                  os produtos químicos para o seu composto e, consequentemente, para a sua horta.
+                </p>
+                <p>
+                  <strong>- Contaminantes Artificiais:</strong> Plásticos, metais, vidro, madeira tratada (com verniz ou tinta), fraldas, tecidos sintéticos e
+                  produtos químicos de limpeza. Eles não se decompõem e liberam substâncias tóxicas que matam os microrganismos da sua composteira.
+                </p>
+              </div>
+            </details>
+          </div>
         </div>
 
         <div id="content-ph-calculator" class="hidden">
@@ -258,7 +316,7 @@
                     id="compost-ph"
                     step="0.1"
                     class="mt-1 block w-full p-2 border border-gray-300 rounded-lg"
-                    placeholder="Use o pH estimado da outra aba" />
+                    placeholder="Use o pH estimado da calculadora" />
                 </div>
                 <button onclick="calculatePhMix()" class="w-full bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 rounded-lg">
                   Calcular pH Final
@@ -407,7 +465,7 @@
             </div>
           </div>
         </div>
-
+        <!--Start Manutenção-->
         <div id="content-maintenance-calculator" class="hidden">
           <div class="bg-white p-6 rounded-2xl shadow-md">
             <h2 class="text-2xl font-semibold text-gray-700 border-b pb-2 mb-4">Calculadora de Manutenção de Máquinas</h2>
@@ -416,11 +474,12 @@
               <div class="space-y-4">
                 <div>
                   <label for="machine-type" class="block text-sm font-medium text-gray-700">Tipo de Máquina</label>
-                  <select id="machine-type" class="mt-1 block w-full p-2 border border-gray-300 rounded-lg">
-                    <option>Trator</option>
-                    <option>Colheitadeira</option>
-                    <option>Pulverizador</option>
-                    <option>Plantadeira</option>
+                  <select id="machine-type" onchange="toggleMachineFields()" class="mt-1 block w-full p-2 border border-gray-300 rounded-lg">
+                    <option value="Trator">Trator</option>
+                    <option value="Colheitadeira">Colheitadeira</option>
+                    <option value="Pulverizador Autopropelido">Pulverizador (Autopropelido)</option>
+                    <option value="Pulverizador Arrasto">Pulverizador (Arrasto)</option>
+                    <option value="Plantadeira">Plantadeira</option>
                   </select>
                 </div>
                 <div>
@@ -428,26 +487,36 @@
                   <input type="text" id="machine-model" class="mt-1 block w-full p-2 border border-gray-300 rounded-lg" placeholder="Ex: John Deere 8R" />
                 </div>
                 <div>
-                  <label for="machine-year" class="block text-sm font-medium text-gray-700">Ano</label>
-                  <input type="number" id="machine-year" class="mt-1 block w-full p-2 border border-gray-300 rounded-lg" placeholder="Ex: 2021" />
+                  <label for="machine-year" class="block text-sm font-medium text-gray-700">Ano de Fabricação</label>
+                  <input type="number" id="machine-year" class="mt-1 block w-full p-2 border border-gray-300 rounded-lg" placeholder="Ex: 2010" />
+                </div>
+                <div id="total-hours-field">
+                  <label for="machine-total-hours" class="block text-sm font-medium text-gray-700">Horas de Uso Totais (aprox.)</label>
+                  <input type="number" id="machine-total-hours" class="mt-1 block w-full p-2 border border-gray-300 rounded-lg" placeholder="Ex: 8500" />
+                </div>
+                <div id="daily-usage-field">
+                  <label for="machine-daily-usage" class="block text-sm font-medium text-gray-700">Horas de Uso Diárias (aprox.)</label>
+                  <input type="number" id="machine-daily-usage" class="mt-1 block w-full p-2 border border-gray-300 rounded-lg" placeholder="Ex: 8" />
+                </div>
+                <div id="hours-field">
+                  <label for="machine-hours-since-change" class="block text-sm font-medium text-gray-700">Horas de Uso (desde a última troca)</label>
+                  <input type="number" id="machine-hours-since-change" class="mt-1 block w-full p-2 border border-gray-300 rounded-lg" placeholder="Ex: 150" />
                 </div>
                 <div>
-                  <label for="machine-km" class="block text-sm font-medium text-gray-700">KM no Momento</label>
-                  <input type="number" id="machine-km" class="mt-1 block w-full p-2 border border-gray-300 rounded-lg" placeholder="Ex: 50000" />
+                  <label for="last-maintenance-date" class="block text-sm font-medium text-gray-700">Data da Última Manutenção/Troca</label>
+                  <input type="date" id="last-maintenance-date" class="mt-1 block w-full p-2 border border-gray-300 rounded-lg" />
                 </div>
-                <div>
-                  <label for="machine-hours" class="block text-sm font-medium text-gray-700">Horas Utilizadas</label>
-                  <input type="number" id="machine-hours" class="mt-1 block w-full p-2 border border-gray-300 rounded-lg" placeholder="Ex: 1500" />
-                </div>
-                <div>
-                  <label for="last-oil-change-date" class="block text-sm font-medium text-gray-700">Data da Última Troca de Óleo</label>
-                  <input type="date" id="last-oil-change-date" class="mt-1 block w-full p-2 border border-gray-300 rounded-lg" />
+                <div id="season-field" class="hidden">
+                  <label class="flex items-center">
+                    <input type="checkbox" id="new-season" class="h-4 w-4 text-green-600 border-gray-300 rounded" />
+                    <span class="ml-2 text-sm text-gray-700">Iniciando nova safra?</span>
+                  </label>
                 </div>
                 <div>
                   <label for="oil-type" class="block text-sm font-medium text-gray-700">Tipo de Óleo</label>
                   <input type="text" id="oil-type" class="mt-1 block w-full p-2 border border-gray-300 rounded-lg" placeholder="Ex: 15W-40 Mineral" />
                 </div>
-                <div>
+                <div id="fuel-field">
                   <label for="fuel-type" class="block text-sm font-medium text-gray-700">Combustível</label>
                   <input type="text" id="fuel-type" class="mt-1 block w-full p-2 border border-gray-300 rounded-lg" placeholder="Ex: Diesel S10" />
                 </div>
@@ -471,63 +540,9 @@
             </div>
           </div>
         </div>
+
+        <!-- End Manutenção -->
       </main>
-      <div class="mt-4 text-left max-w-3xl mx-auto space-y-2 print-section">
-        <details class="bg-gray-100 p-3 rounded-lg">
-          <summary class="font-semibold text-gray-700">O que são Materiais Verdes, Marrons e Neutros?</summary>
-          <div class="mt-2 text-sm text-gray-600 space-y-2">
-            <p>
-              <strong>- Materiais Verdes (Ricos em Nitrogênio):</strong> Pense neles como os "ativadores" da sua composteira. São geralmente úmidos e frescos,
-              como restos de frutas, verduras e borra de café. Eles fornecem a proteína que os microrganismos precisam para se multiplicar e aquecer a pilha.
-            </p>
-            <p>
-              <strong>- Materiais Marrons (Ricos em Carbono):</strong> São a "estrutura" e a fonte de energia. Geralmente secos e fibrosos, como folhas secas,
-              serragem e papelão. Eles garantem a aeração, evitam o mau cheiro e fornecem o "combustível" de longo prazo para os microrganismos.
-            </p>
-            <p>
-              <strong>- Materiais Neutros (Funções Específicas):</strong> São os "corretivos" ou "melhoradores". Não entram na conta principal de Carbono e
-              Nitrogênio, mas têm papéis importantes: a casca de ovo adiciona cálcio, a terra de jardim inocula microrganismos e o pó de rocha adiciona
-              minerais.
-            </p>
-          </div>
-        </details>
-        <details class="bg-gray-100 p-3 rounded-lg">
-          <summary class="font-semibold text-gray-700">O que é a Relação Carbono/Nitrogênio (C:N)?</summary>
-          <div class="mt-2 text-sm text-gray-600">
-            <p>
-              Imagine que os microrganismos da sua composteira precisam de uma dieta balanceada. O <strong>Carbono (C)</strong>, dos materiais "marrons" (folhas
-              secas, papelão), é a fonte de energia. O <strong>Nitrogênio (N)</strong>, dos materiais "verdes" (restos de cozinha, grama), é a proteína para
-              eles crescerem.
-            </p>
-            <p class="mt-1">A relação C:N ideal (entre 25:1 e 30:1) garante uma decomposição rápida, quente e sem mau cheiro.</p>
-          </div>
-        </details>
-        <details class="bg-red-100 p-3 rounded-lg">
-          <summary class="font-semibold text-red-800">Cuidados Essenciais: O que EVITAR na Compostagem</summary>
-          <div class="mt-2 text-sm text-red-700 space-y-2">
-            <p>
-              <strong>- Restos de Origem Animal:</strong> Carnes, ossos, peixes e laticínios. Eles apodrecem, geram odores muito fortes, atraem pragas (ratos,
-              moscas) e podem conter patógenos perigosos.
-            </p>
-            <p>
-              <strong>- Gorduras e Óleos:</strong> Óleo de cozinha, azeite, manteiga e qualquer tipo de gordura. Eles impermeabilizam os materiais, bloqueando a
-              passagem de ar e água, o que causa um ambiente anaeróbico (sem oxigênio) e mau cheiro.
-            </p>
-            <p>
-              <strong>- Fezes de Animais Domésticos:</strong> Cocô de cães e gatos. Podem conter parasitas e vermes que são prejudiciais à saúde humana e que
-              podem não ser eliminados durante a compostagem caseira.
-            </p>
-            <p>
-              <strong>- Plantas Problemáticas:</strong> Plantas doentes, com pragas ou tratadas com agrotóxicos. Você corre o risco de espalhar as doenças e os
-              produtos químicos para o seu composto e, consequentemente, para a sua horta.
-            </p>
-            <p>
-              <strong>- Contaminantes Artificiais:</strong> Plásticos, metais, vidro, madeira tratada (com verniz ou tinta), fraldas, tecidos sintéticos e
-              produtos químicos de limpeza. Eles não se decompõem e liberam substâncias tóxicas que matam os microrganismos da sua composteira.
-            </p>
-          </div>
-        </details>
-      </div>
     </div>
   </body>
 </html>
